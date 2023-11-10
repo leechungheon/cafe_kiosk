@@ -7,16 +7,12 @@ public:
 };
 class Menu {
 public:
-    void show();//메뉴판 출력
+    int show();//메뉴판 출력
     int americano = 1500;
     int cafelatte = 2900;
     int vanillalatte = 3300;
-    
-};
-class Option {
-public:
-    void show1();//옵션 출력-커피류
-    void show2();//옵션 출력-스무디류
+    void option1();
+    void option2();
 };
 class Myinfor {
 public:
