@@ -2,6 +2,7 @@
 #include "header.h"
 using namespace std;
 int Menu::show() {
+    int select;
     cout << "커피" << endl;
     cout << "1. 아메리카노" << endl;
     cout << "2. 카페라떼" << endl;
@@ -19,4 +20,26 @@ int Menu::show() {
     cout << "8. 초코케잌" << endl;
     cout << "9. 아몬드쿠키" << endl;
     cout << endl;
+    do {
+        cin >> select;
+
+    } while (select > 9 || select < 1);
+
+    if (select == 1 || select == 2 || select == 3) {
+        return 1;
+    }
+    else if (select == 4 || select == 5 || select == 6) {
+        return 2;
+    }
+    else {
+        return 0;
+    }
+}
+void Menu::option1() {
+    int temp;
+    cout << "1. ICE" << endl;
+    cout << "2. HOT" << endl;
+    do {
+        cin >> temp;
+    } while (temp!=1||temp!=2);
 }

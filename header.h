@@ -8,16 +8,21 @@ public:
 class Menu {
 public:
     int show();//메뉴판 출력
+    void option1();//커피옵션
+    void option2();//스무디옵션
+};
+class Price {
+public:
     int americano = 1500;
     int cafelatte = 2900;
     int vanillalatte = 3300;
-    void option1();
-    void option2();
-};
-class Myinfor {
-public:
-    int price=0;
-    int number;
-    int stamp=0;
+    int icetea = 2000;
+    int strawberrysmoothe = 4000;
+    int greenteasmoothe = 4000;
+    int cheesecake = 5000;
+    int chococake = 5000;
+    int amondcookie = 2200;
+    int shot = 500;
+    int sizeup = 1000;
 };
 #endif HEADER_H
