@@ -7,8 +7,8 @@ public:
 };
 class Menu {
 public:
-    int show();//메뉴판 출력
-    void option1();//커피옵션
+    int show(int& a);//메뉴판 출력
+    void option1(int option[][10]);//커피옵션
     void option2();//스무디옵션
 };
 class Price {
@@ -22,7 +22,5 @@ public:
     int cheesecake = 5000;
     int chococake = 5000;
     int amondcookie = 2200;
-    int shot = 500;
-    int sizeup = 1000;
 };
 #endif HEADER_H
