@@ -7,9 +7,10 @@ public:
 };
 class Menu {
 public:
+    int Menu_count = 0;  //Menu의 출력횟수를 count
+    int select;
     int show(int& a);//메뉴판 출력
-    void option1(int option[][10]);//커피옵션
-    void option2();//스무디옵션
+    void option(int option[][10]);//무료,유료 옵션
 };
 class Price {
 public:
@@ -22,5 +23,6 @@ public:
     int cheesecake = 5000;
     int chococake = 5000;
     int amondcookie = 2200;
+    int Get_price();     //총 금액을 계산하는 함수
 };
 #endif HEADER_H
