@@ -12,22 +12,25 @@ int main() {
     
     Init init;
     Menu menu;
+    Receipt receipt;
 
     init.show();// 포장/매장 선택
     do {
-        price = 0;
+        price = 0;//가격 초기화
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 option[i][j] = 0;
             }
-        }
-        //메뉴 선택 시작 시 가격, 옵션 초기화
+        }//옵션 초기화
+        
         select_menu[count_menu] = menu.show(price);  //메인 메뉴를 선택해 price에 합산 및 메뉴 체크
-        menu.option(option);  //옵션을 선택해 option배열에 저장
+        if (select_menu[count_menu] != 0) {
+            menu.option(option);  //옵션을 선택해 option배열에 저장
+            receipt.name(select_menu[count_menu]);
+            price_total();   //총 금액을 계산하는 함수
+            cout << price << "원" << endl;
+        }
         count_menu++;
-
-        price_total();   //총 금액을 계산하는 함수
-        cout << price << endl;
     } while (select_menu[count_menu-1]!=0);
     return 0;
 }
