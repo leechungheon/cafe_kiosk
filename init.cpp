@@ -8,6 +8,7 @@ void Init::show() {
         cout << "2. 매장에서 먹어요" << endl;
      do {   
          cin >> select;
-
+         if (select < 1 || select > 2)
+             cout << "다시 입력하십시오." << endl;
     } while (select != 1 && select != 2);
 }

@@ -14,7 +14,7 @@ public:
 };
 class Receipt {
 public:
+    int menu_select;
     void name(int select_menu);
-
 };
 #endif HEADER_H
