@@ -42,16 +42,16 @@ int Menu::show(int &price) {
         if (select == 2)price += 2900;
 
         if (select == 3)price += 3300;
-        return price; //커피 옵션
+        return select; //커피 옵션
     }
     else if (select == 4 || select == 5 || select == 6) {
         if (select == 4)price += 2000;
         if (select == 5)price += 4000;
         if (select == 6)price += 4000;
-        return price;//티/스무디 옵션
+        return select;//티/스무디 옵션
     }
     else if (select == 10) {
-        return 2;//결제하기로
+        return 0;//결제하기로
     }
     else {
         return 0;//

@@ -9,7 +9,7 @@ class Menu {
 public:
     int Menu_count = 0;  //Menu의 출력횟수를 count
     int select;
-    int show(int& a);//메뉴판 출력
+    int show(int& price);//메뉴판 출력
     void option(int option[][10]);//무료,유료 옵션
 };
 class Price {
