@@ -14,7 +14,7 @@ int main() {
     Init init;
     Menu menu;
     Receipt receipt;
-
+   
     init.show();// 포장/매장 선택
     do {
         price = 0;//가격 초기화
@@ -37,7 +37,25 @@ int main() {
        
     } while (select_menu[count_menu-1]!=0);
 
-    void Receipt_show(); //영수증 출력
+    //영수증 출력
+    cout << "                  [영 수 증]                " << endl;
+    cout << "[매장명]  hong coffee & chung bread " << endl;
+    cout << "[주 소]  충북 청주시 충대로 E8-7" << endl;
+    cout << "[대표자] 홍상우 , 이충헌" << endl;
+    cout << "===========================================" << endl;
+    cout << " 상  품  명             수 량        금 액" << endl;
+    for (int i = 0; i < count_menu; i++) {
+
+        if (menu.select == 1)cout << "아메리카노" << "         " << "     " << "1500" << endl;
+        else if (menu.select == 2)cout << "카페라떼" << "         " << "     " << "2900" << endl;
+        else if (menu.select == 3)cout << "바닐라라떼" << "        " << "3300" << endl;
+        else if (menu.select == 4)cout << "아이스티" << "       " << "2000" << endl;
+        else if (menu.select == 5)cout << "딸기스무디" << "       " << "4000" << endl;
+        else if (menu.select == 6)cout << "그린티스무디" << "       " << "4000" << endl;
+        else if (menu.select == 7)cout << "치즈케잌" << "       " << "5000" << endl;
+        else if (menu.select == 8)cout << "초코케잌" << "       " << "5000" << endl;
+        else if (menu.select == 9)cout << "아몬드쿠키" << "       " << "2200" << endl;
+    }
     cout << "===========================================" << endl;
     cout << "합 계 금 액                  " << price_total << endl;
     return 0;
@@ -50,30 +68,3 @@ void price_total()
     }
 }
 
-void Receipt_show() {
-    Receipt receipt;
-    Menu menu;
-    int what_menu; //상품명 
-    int select_show;
-
-    cout << "                  [영 수 증]                " << endl;
-    cout << "[매장명]  hong coffee & chung bread " << endl;
-    cout << "[주 소]  충북 청주시 충대로 E8-7" << endl;
-    cout << "[대표자] 홍상우 , 이충헌" << endl;
-    cout << "===========================================" << endl;
-    cout << " 상  품  명             수 량        금 액" << endl;
-    for (int i = 0; i < count_menu; i++) {
-        select_show=menu.show(price);
-
-        if (select_show == 1)cout<<"아메리카노" << "         " << "     " << "1500" << endl;
-        else if (select_show == 2)cout<<"카페라떼"<<"         "<<"     "<<"2900"<< endl;
-        else if (select_show == 3)cout<<"바닐라라떼"<<"        "<<"3300"<< endl;
-        else if (select_show == 4)cout<<"아이스티"<<"       "<<"2000"<< endl;
-        else if (select_show == 5)cout<<"딸기스무디"<<"       "<<"4000"<< endl;
-        else if (select_show == 6)cout<<"그린티스무디"<<"       "<<"4000"<< endl;
-        else if (select_show == 7)cout<<"치즈케잌"<<"       "<<"5000"<< endl;
-        else if (select_show == 8)cout<<"초코케잌"<<"       "<<"5000"<< endl;
-        else if (select_show == 9)cout<<"아몬드쿠키"<<"       "<<"2200"<< endl;
-    }
-   
-}

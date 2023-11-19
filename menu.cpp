@@ -67,16 +67,19 @@ void Menu::option(int option[][10]) {
     int temp;
     int option_select; // 무료, 유료 옵션 선택
     int option_choose; // 세부 옵션 선택
-
+   
     cout << "===========================================" << endl;
     cout << "                1. ICE" << endl;
     cout << "                2. HOT" << endl;
     cout << "                3. Dessert" << endl;
     cout << "===========================================" << endl;
-    do{
-        cin >> temp;
-    } while (temp!=1||temp!=2||temp!=3);
-
+    cin >> temp;
+    if (temp == 1)
+        cout << "ICE를 선택하였습니다." << endl;
+    else if (temp == 2)
+        cout << "HOT를 선택하였습니다." << endl;
+    else if (temp == 3)
+        cout << "옵션을 선택하십시오." << endl;
     //여기까지 핫/ 아이스 결정
     //이제부터 무료, 유료 옵션 결정
 
