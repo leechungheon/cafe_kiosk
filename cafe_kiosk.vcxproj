@@ -141,7 +141,6 @@
     <ClCompile Include="init.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
-    <ClCompile Include="Price.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />

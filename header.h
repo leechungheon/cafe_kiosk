@@ -23,6 +23,5 @@ public:
     int cheesecake = 5000;
     int chococake = 5000;
     int amondcookie = 2200;
-    int Get_price();     //총 금액을 계산하는 함수
 };
 #endif HEADER_H
