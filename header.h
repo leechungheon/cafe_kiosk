@@ -7,14 +7,16 @@ public:
 };
 class Menu {
 public:
-    int Menu_count = 0;  //Menu의 출력횟수를 count
+    int Menu_count = 0; //Menu의 출력횟수를 count
     int select=0;
     int show(int& price);//메뉴판 출력
     void option(int option[][10]);//무료,유료 옵션
 };
-class Receipt {
+class Receipt: public Menu {
 public:
     int menu_select;
     void name(int select_menu);
+    int price_total(int& price, int option[][10]);
+    void receipt_show(int a[], int b[]);
 };
-#endif HEADER_H
+#endif

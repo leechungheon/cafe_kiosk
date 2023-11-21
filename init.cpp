@@ -1,5 +1,6 @@
 #include <iostream>
 #include "header.h"
+#include <string>
 using namespace std;
 void Init::show() {
     int select;

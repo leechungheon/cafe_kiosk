@@ -1,8 +1,8 @@
 #include <iostream>
 #include "header.h"
+#include <string>
 using namespace std;
-int Menu::show(int &price) {
-   
+int Menu::show(int &price){
         cout << "=====================================" << endl;
         cout << "커피" << endl;
         cout << "1. 아메리카노 - 1500원" << endl;
@@ -25,6 +25,7 @@ int Menu::show(int &price) {
         cout << "=====================================" << endl;
         cout << endl;
      do {
+       
         cin >> select;
 
         if (select == 10 && Menu_count == 0) {
@@ -71,15 +72,14 @@ void Menu::option(int option[][10]) {
     cout << "===========================================" << endl;
     cout << "                1. ICE" << endl;
     cout << "                2. HOT" << endl;
-    cout << "                3. Dessert" << endl;
     cout << "===========================================" << endl;
     cin >> temp;
-    if (temp == 1)
-        cout << "ICE를 선택하였습니다." << endl;
-    else if (temp == 2)
-        cout << "HOT를 선택하였습니다." << endl;
-    else if (temp == 3)
-        cout << "옵션을 선택하십시오." << endl;
+    do {
+        if (temp == 1)
+            cout << "ICE를 선택하였습니다." << endl;
+        else if (temp == 2)
+            cout << "HOT를 선택하였습니다." << endl;
+    } while (temp != 1 && temp != 2);
     //여기까지 핫/ 아이스 결정
     //이제부터 무료, 유료 옵션 결정
 
@@ -93,40 +93,39 @@ void Menu::option(int option[][10]) {
     
     cin >> option_select;
     //무료옵션인 경우
-    
-        if (option_select == 1) {
-            if (repeat == 0) {
-                cout << "===========================================" << endl;
-                cout << "무료옵션\n" << endl;
-                cout << "1. 설탕시럽 추가" << endl;
-                cout << "2. 얼음 추가" << endl;
-                cout << "3. 농도 연하게" << endl;
-                cout << "4. 선택 완료" << endl;
-                cout << "===========================================" << endl;
-                repeat++;
-            }
-            cin >> option_choose;
-            if (option_choose == 1) {
-                option[0][option_choose] = 1;
-                cout << "설탕시럽이 추가되었습니다." << endl;
-            }
-            else if (option_choose == 2) {
-                option[0][option_choose] = 1;
-                cout << "얼음이 추가되었습니다." << endl;
-            }
-            else if (option_choose == 3) {
-                option[0][option_choose] = 1;
-                cout << "농도가 연해졌습니다." << endl;
-            }
-            else if (option_choose == 4) {
-                break;
-            }
-            else
-                cout << "다시 입력하십시오." << endl;
-            
+    while (option_select == 1) {
+        if (repeat == 0) {
+            cout << "===========================================" << endl;
+            cout << "무료옵션\n" << endl;
+            cout << "1. 설탕시럽 추가" << endl;
+            cout << "2. 얼음 추가" << endl;
+            cout << "3. 농도 연하게" << endl;
+            cout << "4. 선택 완료" << endl;
+            cout << "===========================================" << endl;
+            repeat++;
         }
+        cin >> option_choose;
+        if (option_choose == 1) {
+            option[0][option_choose] = 1;
+            cout << "설탕시럽이 추가되었습니다." << endl;
+        }
+        else if (option_choose == 2) {
+            option[0][option_choose] = 1;
+            cout << "얼음이 추가되었습니다." << endl;
+        }
+        else if (option_choose == 3) {
+            option[0][option_choose] = 1;
+            cout << "농도가 연해졌습니다." << endl;
+        }
+        else if (option_choose == 4) {
+            break;
+        }
+        else
+            cout << "다시 입력하십시오." << endl;
+
+    }
         //유료옵션인 경우
-        else if (option_select == 2) {
+        while(option_select == 2) {
             if (repeat == 0) {
                 cout << "===========================================" << endl;
                 cout << "유료옵션\n" << endl;
