@@ -67,7 +67,8 @@ int Menu::show(int &price){
 int Menu::option(int option[][10]) {
     
     int option_select=0; // 무료, 유료 옵션 선택
-    int option_choose; // 세부 옵션 선택
+    int option_choose_1=0; // 무료 옵션 선택
+    int option_choose_2 = 0; // 유료 옵션 선택
     
     
     int repeat = 0;
@@ -94,20 +95,20 @@ int Menu::option(int option[][10]) {
             cout << "===========================================" << endl;
             repeat++;
         }
-        cin >> option_choose;
-        if (option_choose == 1) {
-            option[0][option_choose] = 1;
+        cin >> option_choose_1;
+        if (option_choose_1 == 1) {
+            option[0][option_choose_1] = 1;
             cout << "설탕시럽이 추가되었습니다." << endl;
         }
-        else if (option_choose == 2) {
-            option[0][option_choose] = 1;
+        else if (option_choose_1 == 2) {
+            option[0][option_choose_1] = 1;
             cout << "얼음이 추가되었습니다." << endl;
         }
-        else if (option_choose == 3) {
-            option[0][option_choose] = 1;
+        else if (option_choose_1 == 3) {
+            option[0][option_choose_1] = 1;
             cout << "농도가 연해졌습니다." << endl;
         }
-        else if (option_choose == 4) {
+        else if (option_choose_1 == 4) {
             return -1;  //무료 옵션종료 but 추가로 옵션선택 가능
         }
         else
@@ -129,42 +130,42 @@ int Menu::option(int option[][10]) {
             cout << "===========================================" << endl;
             repeat++;
         }
-        cin >> option_choose;
-        if (option_choose<1|| option_choose>7)
+        cin >> option_choose_2;
+        if (option_choose_2<1|| option_choose_2>7)
             cout << "다시 입력하십시오." << endl;
 
-        if (option_choose == 1) {
-            option[1][option_choose] = 500;
+        if (option_choose_2 == 1) {
+            option[1][option_choose_2] = 500;
             cout << "바닐라 시럽이 추가되었습니다." << endl;
-            return option_choose;
+            return option_choose_2;
         }
-        else if (option_choose == 2) {
-            option[1][option_choose] = 500;
+        else if (option_choose_2 == 2) {
+            option[1][option_choose_2] = 500;
             cout << "헤이즐넛 시럽이 추가되었습니다." << endl;
-            return option_choose;
+            return option_choose_2;
         }
-        else if (option_choose == 3) {
-            option[1][option_choose] = 500;
+        else if (option_choose_2 == 3) {
+            option[1][option_choose_2] = 500;
             cout << "휘핑크림이 추가되었습니다." << endl;
-            return option_choose;
+            return option_choose_2;
         }
-        else if (option_choose == 4) {
-            option[1][option_choose] = 500;
+        else if (option_choose_2 == 4) {
+            option[1][option_choose_2] = 500;
             cout << "샷 추가되었습니다." << endl;
-            return option_choose;
+            return option_choose_2;
         }
-        else if (option_choose == 5) {
-            option[1][option_choose] = 700;
+        else if (option_choose_2 == 5) {
+            option[1][option_choose_2] = 700;
             cout << "펄 추가되었습니다." << endl;
-            return option_choose;
+            return option_choose_2;
         }
-        else if (option_choose == 6) {
-            option[1][option_choose] = 500;
+        else if (option_choose_2 == 6) {
+            option[1][option_choose_2] = 500;
             cout << "우유가 추가되었습니다." << endl;
-            return option_choose;
+            return option_choose_2;
                 
         }
-        else if (option_choose == 7) {
+        else if (option_choose_2 == 7) {
             return -1; //유료 옵션종료 but 추가로 옵션선택 가능
         }
         else

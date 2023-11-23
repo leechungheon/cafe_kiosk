@@ -35,8 +35,8 @@ void Receipt::name(int select_menu) {
     }
 }
 
-void Receipt::obtion_name(int select_obtion_menu) {
-    switch (select_obtion_menu) {
+void Receipt::option_name(int select_option) {
+    switch (select_option) {
     case 1:
         cout << "바닐라 시럽 ";
         break;
@@ -58,13 +58,15 @@ void Receipt::obtion_name(int select_obtion_menu) {
 
     }
 }
-int Receipt:: price_total(int& price, int option[][10])
+int Receipt::price_total(int& price, int option[][10])
 {
     for (int i = 1; i < 7; i++) {   //0행(무료옵션)은 무료옵션이므로 1행(유료옵션)만 price에 합산한다.
         price += option[1][i];
     }
     return price;
 }
+
+
 int Receipt::price_main(int& price) {  //개별 메인메뉴에 대한 가격 출력
     switch (price) {
     case 1:
@@ -102,8 +104,8 @@ int Receipt::price_option(int& select_option) {  //옵션에 대한 가격 출력
         return 700;
     case 6:
         return 500;
-    case -1:
-        break;
+    case -1:     //선택완료
+        return 0;
     }
 }
 
@@ -117,24 +119,26 @@ void Receipt::receipt_show(int sum_menu[],int main_price[], int select_option[],
     cout << "===========================================" << endl;
     cout << " 상  품  명                          금 액" << endl;
 
-    for (int i = 0; i < 10; i++) {
+ 
+    //메인메뉴 출력
+    for (int i = 0; i < 10; i++) {  
         if (sum_menu[i] != 0 && main_price[i] != 0) {
             name(sum_menu[i]);     
-            cout << "                             " << main_price[i] << endl;           
-            //cout << "                           " << sum_option[i] << endl;
-            total += main_price[i];
-        }
-        if (select_option[i] != -1 && price_option[i] != 0) {
-            obtion_name(select_option[i]);
+            cout << "                             " << main_price[i] << endl;                    
+            //total += main_price[i];
+        }             
+    }
+    
+    //옵션 출력
+    for (int i = 0; i < 10; i++) {        
+        if (select_option[i] != -1 || price_option[i] != 0) {
+            option_name(select_option[i]);
             cout << "                            " << price_option[i] << endl;
             total += price_option[i];
         }
-        enter++;
     }
-    for (int j = 0; j < enter; j++) {
+    for (int j = 0; j < 5; j++) {
         cout << endl;
-    }
-
-    cout << "===========================================" << endl;
-    cout << "합 계 금 액                          " << total<<endl;
+    }   
+   
 }
