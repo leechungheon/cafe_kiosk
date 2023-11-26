@@ -69,11 +69,13 @@ int main() {
             } //옵션을 선택해 option배열에 저장
 
             receipt.name(select_menu[count_menu]); //상품명 출력
-            cout<< receipt.price_main(select_menu[count_menu]) << endl;
+            cout<< receipt.price_main(select_menu[count_menu]) << endl;  //메인메뉴의 가격표시
             for (int i = 0; i < count_option - 1; i++) {
-                receipt.option_name(select_option[i]);
-                cout<< receipt.price_option(select_option[i]);
-                cout<< endl;
+                if (select_option[i] != -1&&select_option[i]!=0) {
+                    receipt.option_name(select_option[i]);
+                    cout << receipt.price_option(select_option[i]);
+                    cout << endl;
+                }
             }cout<< endl;
 
             //cout<< receipt.price_total(price, option)<<endl;              

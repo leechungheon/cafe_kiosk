@@ -9,25 +9,25 @@ void Receipt::name(int select_menu) {
         cout<< "아메리카노 ";
         break;
     case 2:
-        cout << "카페라떼 ";
+        cout << "카페라떼   ";
         break;
     case 3:
         cout << "바닐라라떼 ";
         break;
     case 4:
-        cout << "아이스티 ";
+        cout << "아이스티   ";
         break;
     case 5:
         cout << "딸기스무디 ";
         break;
     case 6:
-        cout << "그린티스무디 ";
+        cout << "그린티스무디";
         break;
     case 7:
-        cout << "치즈케잌 ";
+        cout << "치즈케잌   ";
         break;
     case 8:
-        cout << "초코케잌 ";
+        cout << "초코케잌   ";
         break;
     case 9:
         cout << "아몬드쿠키 ";
@@ -138,38 +138,3 @@ void Receipt::receipt_show(int sum_menu[], int sum_price[]) {
     cout << "합 계 금 액                          " << total << endl;
 }
 
-/*
-* void Receipt::receipt_show(int sum_menu[],int main_price[], int select_option[], int price_option[]) {
-    int total = 0;
-    int enter = 0;
-    cout << "                  [영 수 증]                " << endl;
-    cout << "[매장명]  hong coffee & chung bread " << endl;
-    cout << "[주 소]  충북 청주시 충대로 E8-7" << endl;
-    cout << "[대표자] 홍상우 , 이충헌" << endl;
-    cout << "===========================================" << endl;
-    cout << " 상  품  명                          금 액" << endl;
-
-
-    //메인메뉴 출력
-    for (int i = 0; i < 10; i++) {
-        if (sum_menu[i] != 0 && main_price[i] != 0) {
-            name(sum_menu[i]);
-            cout << "                             " << main_price[i] << endl;
-            //total += main_price[i];
-        }
-    }
-
-    //옵션 출력
-    for (int i = 0; i < 10; i++) {
-        if (select_option[i] != -1 || price_option[i] != 0) {
-            option_name(select_option[i]);
-            cout << "                            " << price_option[i] << endl;
-            total += price_option[i];
-        }
-    }
-    for (int j = 0; j < 5; j++) {
-        cout << endl;
-    }
-
-}
-*/
